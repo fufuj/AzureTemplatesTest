@@ -5,13 +5,80 @@
                        "basics":  [
                                       {
                                           "name":  "Environment",
-                                          "type":  "Microsoft.Common.TextBox",
+                                          "type":  "Microsoft.Common.DropDown",
                                           "label":  "Environment",
-                                          "defaultValue":  null,
-                                          "toolTip":  null
+                                          "defaultValue":  "Lab",
+                                          "toolTip":  null,
+                                          "constraints":  {
+                                                              "allowedValues":  [
+                                                                                    {
+                                                                                        "label":  "Lab",
+                                                                                        "value":  "lab"
+                                                                                    },
+                                                                                    {
+                                                                                        "label":  "Integration",
+                                                                                        "value":  "int"
+                                                                                    },
+                                                                                    {
+                                                                                        "label":  "Production",
+                                                                                        "value":  "pro"
+                                                                                    }
+                                                                                ]
+                                                          }
+                                                          
                                       }
+                                      
                                   ],
                        "steps":  [
+                        {
+                            "name": "element1",
+                            "type": "Microsoft.Network.VirtualNetworkCombo",
+                            "label": {
+                              "virtualNetwork": "Virtual network",
+                              "subnets": "Subnets"
+                            },
+                            "toolTip": {
+                              "virtualNetwork": "",
+                              "subnets": ""
+                            },
+                            "defaultValue": {
+                              "name": "vnet01",
+                              "addressPrefixSize": "/16"
+                            },
+                            "constraints": {
+                              "minAddressPrefixSize": "/16"
+                            },
+                            "options": {
+                              "hideExisting": false
+                            },
+                            "subnets": {
+                              "subnet1": {
+                                "label": "First subnet",
+                                "defaultValue": {
+                                  "name": "subnet-1",
+                                  "addressPrefixSize": "/24"
+                                },
+                                "constraints": {
+                                  "minAddressPrefixSize": "/24",
+                                  "minAddressCount": 12,
+                                  "requireContiguousAddresses": true
+                                }
+                              },
+                              "subnet2": {
+                                "label": "Second subnet",
+                                "defaultValue": {
+                                  "name": "subnet-2",
+                                  "addressPrefixSize": "/26"
+                                },
+                                "constraints": {
+                                  "minAddressPrefixSize": "/26",
+                                  "minAddressCount": 8,
+                                  "requireContiguousAddresses": true
+                                }
+                              }
+                            },
+                            "visible": true
+                          },
                                      {
                                          "name":  "Backup",
                                          "label":  "Backup",
@@ -22,68 +89,53 @@
                                          "bladeTitle":  "Backup",
                                          "elements":  [
                                                           {
-                                                              "name":  "BackupPlan",
-                                                              "type":  "Microsoft.Common.DropDown",
-                                                              "label":  "BackupPlan",
-                                                              "defaultValue":  "F1",
+                                                              "name":  "BackupEnabled",
+                                                              "type":  "Microsoft.Common.OptionsGroup",
+                                                              "label":  "BackupEnabled",
+                                                              "defaultValue":  "disabled",
                                                               "toolTip":  null,
                                                               "constraints":  {
                                                                                   "allowedValues":  [
                                                                                                         {
-                                                                                                            "label":  "F1",
-                                                                                                            "value":  "F1"
+                                                                                                            "label":  "enabled",
+                                                                                                            "value":  "true"
                                                                                                         },
                                                                                                         {
-                                                                                                            "label":  "D1",
-                                                                                                            "value":  "D1"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "B1",
-                                                                                                            "value":  "B1"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "B2",
-                                                                                                            "value":  "B2"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "B3",
-                                                                                                            "value":  "B3"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "S1",
-                                                                                                            "value":  "S1"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "S2",
-                                                                                                            "value":  "S2"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "S3",
-                                                                                                            "value":  "S3"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "P1",
-                                                                                                            "value":  "P1"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "P2",
-                                                                                                            "value":  "P2"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "P3",
-                                                                                                            "value":  "P3"
-                                                                                                        },
-                                                                                                        {
-                                                                                                            "label":  "P4",
-                                                                                                            "value":  "P4"
+                                                                                                            "label":  "disabled",
+                                                                                                            "value":  "false"
                                                                                                         }
                                                                                                     ]
                                                                               }
+                                                          },
+                                                          {
+                                                              "name":  "BackupPlan",
+                                                              "type":  "Microsoft.Common.DropDown",
+                                                              "label":  "BackupPlan",
+                                                              "defaultValue":  "Daily B1",
+                                                              "toolTip":  null,                                                              
+                                                              "constraints":  {
+                                                                                  "allowedValues":  [
+                                                                                                        {
+                                                                                                            "label":  "Daily B1",
+                                                                                                            "value":  "B1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "Weekly B2",
+                                                                                                            "value":  "B2"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "Monthly B3",
+                                                                                                            "value":  "B3"
+                                                                                                        }
+                                                                                                    ]
+                                                                              },
+                                                              "visible": "[equals(steps('Backup').BackupEnabled,'true') ]"
                                                           }
                                                       ]
                                      }
                                  ],
-                       "outputs":  {
+                                "outputs":  {
+                                       "BackupEnabled":  "[steps('Backup').BackupEnabled]",
                                        "BackupPlan":  "[steps('Backup').BackupPlan]",
                                        "Environment":  "[basics('Environment')]"
                                    }

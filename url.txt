@@ -1,3 +1,12 @@
 https://portal.azure.com/?clientOptimizations=false#blade/Microsoft_Azure_Compute/CreateMultiVmWizardBlade/internal_bladeCallId/anything/internal_bladeCallerParams/{"initialData":{},"providerConfig":{"createUiDefinition":"https%3A%2F%2Fraw.githubusercontent.com%2Ffufuj%2FAzureTemplatesTest%2Fmaster%2FcreateUiDefinition.json"}}
 
 https%3A%2F%2Fraw.githubusercontent.com%2Ffufuj%2FAzureTemplatesTest%2Fmaster%2FcreateUiDefinition.json
+
+https://portal.azure.com/?clientOptimizations=false#blade/Microsoft_Azure_Compute/CreateMultiVmWizardBlade/internal_bladeCallId/anything/internal_bladeCallerParams/{"initialData":{},"providerConfig":{"createUiDefinition":"https%3A%2F%2Fraw.githubusercontent.com%2Ffufuj%2FAzureTemplatesTest%2Fmaster%2Ftest.json"}}
+
+
+https://portal.azure.com/#blade/Microsoft_Azure_Compute/CreateMultiVmWizardBlade/internal_bladeCallId/anything/internal_bladeCallerParams/{"initialData":{},"providerConfig":{"createUiDefinition":"https%3A%2F%2Fraw.githubusercontent.com%2Ffufuj%2FAzureTemplatesTest%2Fmaster%2FcreateUiDefinition.json"}}
+
+
+
+https://raw.githubusercontent.com/fufuj/AzureTemplatesTest/master/createUiDefinition.json
