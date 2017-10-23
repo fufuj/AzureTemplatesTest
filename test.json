@@ -1,0 +1,91 @@
+{
+    "handler":  "Microsoft.Compute.MultiVm",
+    "version":  "0.1.0-preview",
+    "parameters":  {
+                       "basics":  [
+                                      {
+                                          "name":  "Environment",
+                                          "type":  "Microsoft.Common.TextBox",
+                                          "label":  "Environment",
+                                          "defaultValue":  null,
+                                          "toolTip":  null
+                                      }
+                                  ],
+                       "steps":  [
+                                     {
+                                         "name":  "Backup",
+                                         "label":  "Backup",
+                                         "subLabel":  {
+                                                          "preValidation":  "Configure the Backup settings",
+                                                          "postValidation":  "Done"
+                                                      },
+                                         "bladeTitle":  "Backup",
+                                         "elements":  [
+                                                          {
+                                                              "name":  "BackupPlan",
+                                                              "type":  "Microsoft.Common.DropDown",
+                                                              "label":  "BackupPlan",
+                                                              "defaultValue":  "F1",
+                                                              "toolTip":  null,
+                                                              "constraints":  {
+                                                                                  "allowedValues":  [
+                                                                                                        {
+                                                                                                            "label":  "F1",
+                                                                                                            "value":  "F1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "D1",
+                                                                                                            "value":  "D1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "B1",
+                                                                                                            "value":  "B1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "B2",
+                                                                                                            "value":  "B2"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "B3",
+                                                                                                            "value":  "B3"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "S1",
+                                                                                                            "value":  "S1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "S2",
+                                                                                                            "value":  "S2"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "S3",
+                                                                                                            "value":  "S3"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "P1",
+                                                                                                            "value":  "P1"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "P2",
+                                                                                                            "value":  "P2"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "P3",
+                                                                                                            "value":  "P3"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "label":  "P4",
+                                                                                                            "value":  "P4"
+                                                                                                        }
+                                                                                                    ]
+                                                                              }
+                                                          }
+                                                      ]
+                                     }
+                                 ],
+                       "outputs":  {
+                                       "BackupPlan":  "[steps('Backup').BackupPlan]",
+                                       "Environment":  "[basics('Environment')]"
+                                   }
+                   }
+}
